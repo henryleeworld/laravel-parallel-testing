@@ -28,5 +28,5 @@ $ php artisan test --parallel
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/FMDi95U.png)
+![](https://i.imgur.com/05beADR.png)
 > 預設情況下會以機器上可用的 CPU 核心數來建立處理程序
