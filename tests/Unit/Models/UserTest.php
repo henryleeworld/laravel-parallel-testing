@@ -19,7 +19,7 @@ class UserTest extends TestCase
 
         $user = new User([
             "name" => "User",
-            "password" => Hash::make("rawpassword"),
+            "password" => "rawpassword",
         ]);
         $this->assertEquals("hashed", $user->password);
     }
