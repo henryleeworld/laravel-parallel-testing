@@ -11,29 +11,25 @@ class UserTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testPasswordWillBeHashed()
+    public function testPasswordWillBeHashed(): void
     {
-        Hash::shouldReceive("make")
-            ->once()
-            ->andReturn("hashed");
-
-        $user = new User([
-            "name" => "User",
-            "password" => "rawpassword",
+        $user = User::factory()->create([
+            'password' => $password = 'password',
         ]);
-        $this->assertEquals("hashed", $user->password);
+        $this->assertTrue(Hash::check($password, $user->password));
     }
 
-    public function testCheckUserEmailVefified()
+    public function testCheckUserEmailVefified(): void
     {
-        $user = new User();
-        $user->email_verified_at = now();
+        $user = User::factory()->create([
+            'email_verified_at' => now(),
+        ]);
         $this->assertTrue($user->hasVerifiedEmail());
     }
 
-    public function testCheckUserEmailNotVefified()
+    public function testCheckUserEmailNotVefified(): void
     {
-        $user = new User();
+        $user = User::factory()->unverified()->create();
         $this->assertFalse($user->hasVerifiedEmail());
     }
 }
