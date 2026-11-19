@@ -1,4 +1,4 @@
-# Laravel 12 平行測試
+# Laravel 13 平行測試
 
 引入 brianium 的 paratest 套件來擴增平行測試，開啟平行測試可大幅縮短執行所有測試所需的時間。
 
@@ -28,5 +28,5 @@ $ php artisan test --parallel
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/7J7Or6O.png)
+![](https://i.imgur.com/5CXXX5g.png)
 > 預設情況下會以機器上可用的 CPU 核心數來建立處理程序
